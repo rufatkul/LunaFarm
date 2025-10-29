@@ -1,0 +1,31 @@
+{
+  "wifi": {
+    "ssid": "Red5Aero",
+    "psk": "CavN378WX"
+  },
+  "mqtt": {
+    "server": "192.168.2.65",
+    "port": 1883,
+    "client_id": "esp32-greenhouse-01",
+    "base_topic": "greenhouse",
+    "lwt": {
+      "topic": "greenhouse/status",
+      "payload_offline": "offline",
+      "payload_online": "online",
+      "retain": true
+    }
+  },
+  "controls": [
+    {
+      "type": "dummy_switch",
+      "id": "dummy-switch-1",
+      "initial_state": {
+        "on": false
+      },
+      "topics": {
+        "cmd": "greenhouse/dummy-switch-1/cmd",
+        "state": "greenhouse/dummy-switch-1/state"
+      }
+    }
+  ]
+}
